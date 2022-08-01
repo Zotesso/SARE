@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:sare/appController.dart';
 import 'package:sare/homePage.dart';
+import 'package:sare/loginPage.dart';
 
 class AppWidget extends StatelessWidget {
   @override
@@ -13,7 +14,11 @@ class AppWidget extends StatelessWidget {
               primarySwatch: Colors.cyan,
               brightness: AppController.instance.isDarkTheme ? Brightness.dark : Brightness.light,
             ),
-            home: HomePage(),
+            initialRoute: '/',
+            routes: {
+              '/': (context) => LoginPage(),
+              '/home': (context) => HomePage(),
+            },
           );
         }
     );
